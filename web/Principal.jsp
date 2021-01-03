@@ -39,6 +39,9 @@
                         <a class="nav-link" href="MenuController?menu=Clientes" target="framePrincipal">Clientes <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
+                        <a class="nav-link" href="MenuController?menu=Proveedores" target="framePrincipal">Proveedores</a> <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
                         <a class="nav-link" href="MenuController?menu=NuevaVenta" target="framePrincipal">Nueva Venta</a>
                     </li>
 

@@ -3,9 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Jair/Desktop/Universidad/Integracion/ProyIWFarmaciaBalzar/src/java/com/proy/ingweb/DAO/ClienteDAO.java</file>
-            <file>file:/C:/Users/Jair/Desktop/Universidad/Integracion/ProyIWFarmaciaBalzar/web/Clientes.jsp</file>
-            <file>file:/C:/Users/Jair/Desktop/Universidad/Integracion/ProyIWFarmaciaBalzar/src/java/com/proy/ingweb/Conexion/ConexionSQLServer.java</file>
+            <file>file:/C:/Users/Luis/Desktop/LUIS/ProyIWFarmaciaBalzar/web/static/js/jquery-3.5.1.min.js</file>
+            <file>file:/C:/Users/Luis/Desktop/LUIS/ProyIWFarmaciaBalzar/web/Clientes.jsp</file>
+            <file>file:/C:/Users/Luis/Desktop/LUIS/ProyIWFarmaciaBalzar/web/static/js/clienteR.js</file>
+            <file>file:/C:/Users/Luis/Desktop/LUIS/ProyIWFarmaciaBalzar/web/Backup.jsp</file>
+            <file>file:/C:/Users/Luis/Desktop/LUIS/ProyIWFarmaciaBalzar/web/static/js/ProveedorR.js</file>
+            <file>file:/C:/Users/Luis/Desktop/LUIS/ProyIWFarmaciaBalzar/web/static/js/jquery.min.js</file>
+            <file>file:/C:/Users/Luis/Desktop/LUIS/ProyIWFarmaciaBalzar/web/static/js/validaciones.js</file>
+            <file>file:/C:/Users/Luis/Desktop/LUIS/ProyIWFarmaciaBalzar/src/java/com/proy/ingweb/Controlador/ProveedorController.java</file>
+            <file>file:/C:/Users/Luis/Desktop/LUIS/ProyIWFarmaciaBalzar/web/Principal.jsp</file>
+            <file>file:/C:/Users/Luis/Desktop/LUIS/ProyIWFarmaciaBalzar/web/Proveedores.jsp</file>
         </group>
     </open-files>
 </project-private>

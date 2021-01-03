@@ -8,7 +8,9 @@ package com.proy.ingweb.Controlador;
 import com.proy.ingweb.DAO.ClienteDAO;
 import com.proy.ingweb.DAO.MedicamentoDAO;
 import com.proy.ingweb.DAO.OperarioDAO;
+import com.proy.ingweb.DAO.ProveedorDAO;
 import com.proy.ingweb.Modelo.Cliente;
+import com.proy.ingweb.iDAO.IProveedorDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -49,7 +51,14 @@ public class MenuController extends HttpServlet {
                 request.setAttribute("lista_clientes", lista_clientes); 
                 System.out.println(lista_clientes);
                 request.getRequestDispatcher("Clientes.jsp").forward(request, response);
-                break;            
+                break;
+            case "Proveedores":
+                IProveedorDAO pro_metodos= new ProveedorDAO();
+                List lista_proveedores = pro_metodos.listar();
+                request.setAttribute("lista_proveedores", lista_proveedores); 
+                System.out.println(lista_proveedores);
+                request.getRequestDispatcher("Proveedores.jsp").forward(request, response);
+                break;   
             case "Medicamentos":
                 MedicamentoDAO med_metodos = new MedicamentoDAO();
                 List lista_medicamentos = med_metodos.listar();
