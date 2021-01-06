@@ -45,6 +45,7 @@ public class ClienteController extends HttpServlet {
                 String Nombres = request.getParameter("txtNombres");
                 String Direccion = request.getParameter("txtDireccion");
                 String Telefono = request.getParameter("txtTelefono");
+                int Edad = Integer.parseInt(request.getParameter("txtEdad"));
                 DateTimeFormatter f = DateTimeFormatter.ofPattern( "yyyy-MM-dd" );
                 LocalDate FechaNacimiento  =LocalDate.parse(request.getParameter("txtFechaNacimiento"), f);
 
@@ -56,7 +57,7 @@ public class ClienteController extends HttpServlet {
                 cli.setDireccion(Direccion);
                 cli.setTelefono(Telefono);
                 cli.setFechaNacimiento(FechaNacimiento);
-                cli.setEdad(FechaNacimiento.getYear());
+                cli.setEdad(Edad);
 
                 System.out.println(cli);
                 
