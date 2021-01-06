@@ -159,6 +159,7 @@ public class ClienteDAO implements IClienteDAO {
                 cli.setEdad(rs.getInt(9));
             }
         } catch (SQLException e) {
+            e.printStackTrace();
         }
         return cli;
     }
