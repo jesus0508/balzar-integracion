@@ -8,16 +8,13 @@ package com.proy.ingweb.Controlador;
 import com.proy.ingweb.DAO.ClienteDAO;
 import com.proy.ingweb.Modelo.Cliente;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.time.LocalDateTime;  
-import java.time.format.DateTimeFormatter; 
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -26,15 +23,15 @@ import java.time.format.DateTimeFormatter;
 @WebServlet(name = "ClienteController", urlPatterns = {"/ClienteController"})
 public class ClienteController extends HttpServlet {
 
-    Cliente cli= new Cliente();
+    Cliente cli = new Cliente();
     ClienteDAO cli_metodos = new ClienteDAO();
     int id;
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String accion = request.getParameter("accion");
-        
-        switch(accion){
+
+        switch (accion) {
             case "Listar":
                 break;
             case "Agregar":
@@ -46,10 +43,10 @@ public class ClienteController extends HttpServlet {
                 String Direccion = request.getParameter("txtDireccion");
                 String Telefono = request.getParameter("txtTelefono");
                 int Edad = Integer.parseInt(request.getParameter("txtEdad"));
-                DateTimeFormatter f = DateTimeFormatter.ofPattern( "yyyy-MM-dd" );
-                LocalDate FechaNacimiento  =LocalDate.parse(request.getParameter("txtFechaNacimiento"), f);
+                DateTimeFormatter f = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                LocalDate FechaNacimiento = LocalDate.parse(request.getParameter("txtFechaNacimiento"), f);
 
-    //Asignamos a un objeto de operario
+                //Asignamos a un objeto de operario
                 cli.setDni(Dni);
                 cli.setApellidoPaterno(ApellidoPaterno);
                 cli.setApellidoMaterno(ApellidoMaterno);
@@ -60,19 +57,19 @@ public class ClienteController extends HttpServlet {
                 cli.setEdad(Edad);
 
                 System.out.println(cli);
-                
-                int r=cli_metodos.agregar(cli);
+
+                int r = cli_metodos.agregar(cli);
                 System.out.println(r);
                 request.getRequestDispatcher("MenuController?menu=Clientes").forward(request, response);
-               break;
-                
+                break;
+
             case "Editar":
-                id= Integer.parseInt(request.getParameter("id"));
+                id = Integer.parseInt(request.getParameter("id"));
                 cli = cli_metodos.listarId(id);
                 request.setAttribute("cliente", cli);
                 request.getRequestDispatcher("MenuController?menu=Clientes").forward(request, response);
                 break;
-            
+
             case "Actualizar":
                 //Obtener los datos de la vista
                 String aDni = request.getParameter("txtDni");
@@ -81,8 +78,8 @@ public class ClienteController extends HttpServlet {
                 String aNombres = request.getParameter("txtNombres");
                 String aDireccion = request.getParameter("txtDireccion");
                 String aTelefono = request.getParameter("txtTelefono");
-                DateTimeFormatter af = DateTimeFormatter.ofPattern( "yyyy-MM-dd" );
-                LocalDate aFechaNacimiento  =LocalDate.parse(request.getParameter("txtFechaNacimiento"), af);
+                DateTimeFormatter af = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                LocalDate aFechaNacimiento = LocalDate.parse(request.getParameter("txtFechaNacimiento"), af);
                 cli.setDni(aDni);
                 cli.setApellidoPaterno(aApellidoPaterno);
                 cli.setApellidoMaterno(aApellidoMaterno);
@@ -91,21 +88,22 @@ public class ClienteController extends HttpServlet {
                 cli.setTelefono(aTelefono);
                 cli.setFechaNacimiento(aFechaNacimiento);
                 cli.setEdad(aFechaNacimiento.getYear());
-                
+
                 cli_metodos.actualizar(cli);
                 request.getRequestDispatcher("MenuController?menu=Clientes").forward(request, response);
 
                 break;
-                
+
             case "Eliminar":
-                id=Integer.parseInt(request.getParameter("id"));
+                id = Integer.parseInt(request.getParameter("id"));
+                System.out.println(id);
                 cli_metodos.eliminar(id);
                 request.getRequestDispatcher("MenuController?menu=Clientes").forward(request, response);
-               break;
-            
+                break;
+
             default:
                 throw new AssertionError();
-                     
+
         }
     }
 

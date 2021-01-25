@@ -9,11 +9,8 @@ import com.proy.ingweb.DAO.ClienteDAO;
 import com.proy.ingweb.DAO.MedicamentoDAO;
 import com.proy.ingweb.DAO.OperarioDAO;
 import com.proy.ingweb.DAO.ProveedorDAO;
-import com.proy.ingweb.Modelo.Cliente;
 import com.proy.ingweb.iDAO.IProveedorDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -41,24 +38,24 @@ public class MenuController extends HttpServlet {
             throws ServletException, IOException {
         //Menu de la barra superior
         String menu = request.getParameter("menu");
-        switch(menu){
+        switch (menu) {
             case "Principal":
                 request.getRequestDispatcher("Principal.jsp").forward(request, response);
                 break;
             case "Clientes":
-                ClienteDAO cli_metodos= new ClienteDAO();
+                ClienteDAO cli_metodos = new ClienteDAO();
                 List lista_clientes = cli_metodos.listar();
-                request.setAttribute("lista_clientes", lista_clientes); 
+                request.setAttribute("lista_clientes", lista_clientes);
                 System.out.println(lista_clientes);
                 request.getRequestDispatcher("Clientes.jsp").forward(request, response);
                 break;
             case "Proveedores":
-                IProveedorDAO pro_metodos= new ProveedorDAO();
+                IProveedorDAO pro_metodos = new ProveedorDAO();
                 List lista_proveedores = pro_metodos.listar();
-                request.setAttribute("lista_proveedores", lista_proveedores); 
+                request.setAttribute("lista_proveedores", lista_proveedores);
                 System.out.println(lista_proveedores);
                 request.getRequestDispatcher("Proveedores.jsp").forward(request, response);
-                break;   
+                break;
             case "Medicamentos":
                 MedicamentoDAO med_metodos = new MedicamentoDAO();
                 List lista_medicamentos = med_metodos.listar();
@@ -66,9 +63,9 @@ public class MenuController extends HttpServlet {
                 request.getRequestDispatcher("Medicamentos.jsp").forward(request, response);
                 break;
             case "Operarios":
-                OperarioDAO oper_metodos= new OperarioDAO();
+                OperarioDAO oper_metodos = new OperarioDAO();
                 List lista = oper_metodos.listar();
-                request.setAttribute("operarios", lista); 
+                request.setAttribute("operarios", lista);
                 request.getRequestDispatcher("Operarios.jsp").forward(request, response);
                 break;
             case "NuevaVenta":
@@ -81,7 +78,7 @@ public class MenuController extends HttpServlet {
                 throw new AssertionError();
         }
     }
-    
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
