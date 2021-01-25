@@ -25,7 +25,7 @@ public class ConexionSQLServer {
 
         //Asignamos los datos
         this.driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-        this.url = "jdbc:sqlserver://blazarbd.ceadu0qaevtf.us-east-1.rds.amazonaws.com:1433;databaseName=balzar;user=admin;password=balzar-fisi";
+        this.url = "jdbc:sqlserver://balzar.cjpff9zmygv2.us-east-1.rds.amazonaws.com:1433;databaseName=balzar;user=admin;password=fisi-balzar";
 
         try {
             Class.forName(driver);
